@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[在C9.io開發Hexo]]></title>
+      <url>/2018/01/07/%E5%9C%A8C9-io%E9%96%8B%E7%99%BCHexo/</url>
+      <content type="html"><![CDATA[<p>與 React 搭配的單向資料流架構 Flux 已經推出一段時間，想必有在使用 React 的開發者們都已相當熟悉。社群也陸陸續續開發出許多 Flux 相關的 library 像是：Reflux, Fluxxor, Alt 等等…。而最近有在關注 React 社群的人一定都有聽過 Redux 這個迅速竄紅的 library。但由於 Redux 在設計上與原生的 Flux 較為不同，因此希望能藉由這篇文章幫助各位瞭解 Redux 的基本運作方式。</p>
+<p>Redux 核心概念<br>只使用一個 store 將整個應用程式的狀態 (state) 用物件樹 (object tree) 的方式儲存起來。 原生的 Flux 會有許多分散的 store 儲存各個不同的狀態，但在 redux 中，只會有一個 store 將所有的資料用物件的方式包起來。請看以下比喻：</p>
+<pre class="line-numbers language-Javascripts"><code class="language-Javascripts">var state = {
+    firstState: {
+        first: 1
+    },
+    secondState: {
+        second: 2
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 技術 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> node.js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/2018/01/05/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 自言语 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title><![CDATA[关于]]></title>
+      <url>/about.html</url>
+      <content type="html"><![CDATA[<script src="https://cdnjs.cat.net/ajax/libs/aplayer/1.6.0/APlayer.min.js"></script>
+<script src="https://api.i-meto.com/music/aplayer.min.js"></script>
+
+<div class="aplayer" data-title="愚弄者x愚弄者" data-author="洛天依 / 桑葚上的猴子" data-pic="https://ww1.sinaimg.cn/large/0060lm7Tly1fk7973eouqj30so0qpjt5.jpg" data-url="https://fuckalisummer.nfz.yecdn.com/music/%E6%84%9A%E5%BC%84%E8%80%85.mp3" data-lrc="https://fuckalisummer.nfz.yecdn.com/music/%E3%80%90%E6%B4%9B%E5%A4%A9%E4%BE%9D%E5%8E%9F%E5%88%9B%E6%9B%B2%E3%80%91%E6%84%9A%E5%BC%84%E8%80%85x%E6%84%9A%E5%BC%84%E8%80%85%20%EF%BC%88%E6%A1%91%E8%91%9A%E4%B8%8A%E7%9A%84%E7%8C%B4%E5%AD%90%EF%BC%89%E3%80%90%E4%B8%80%E5%9B%BEpv%E4%BB%98%E3%80%91.lrc" data-autoplay="false"></div>
+
+<h2 id="我是谁"><a href="#我是谁" class="headerlink" title="我是谁"></a>我是谁</h2><p>我是 neoFelhz ( /ˌnɪəʊˈfɜːz/ )，叫我的简称 neo 也行。</p>
+<blockquote>
+<p>如果你叫我 neo 喵，我会回应一声 “喵呜(๑´ω`๑)～”</p>
+</blockquote>
+<p>我给自己取 ID 的时候是努比亚手机的忠实粉。那时候，努比亚的很多产品都用 Neo 命名（比如 nubia 相机 NeoVision；nubiaUI 省电技术 NeoPower；nubia 声音渲染技术 Neosound；摄影分享软件 NeoShare . . .），所以我就给自己取了 neo 这个姓。<br><code>F</code> 表示我来自 福建，<code>E</code> 表示 <code>Elementery</code> ，<code>lhz</code> 是我的姓名首字母缩写（显而易见地）。</p>
+<hr>
+<p>不善交际，不喜欢外出。<br>喜欢小众事物，对开源的、自己可以参与的东西很感兴趣。</p>
+<blockquote>
+<p>这就是为什么我折腾 Android 有关的东西。</p>
+</blockquote>
+<p>喜欢自由和无拘无束、不喜欢被束缚。</p>
+<blockquote>
+<p>所以我一直研究如何吊打国内 BAT 毒瘤。我也已经是 <del><a href="https://mat.letitfly.me" target="_blank" rel="noopener">MAT BBS</a>的中级会员</del> <a href="https://bbs.letitfly.me" target="_blank" rel="noopener">LetITFly BBS</a> 的管理员了。</p>
+</blockquote>
+<p>一只中文 VOCALOID 歌迷，也喜欢听各种纯音乐；对人声无感；还是一只 Penbeater。</p>
+<blockquote>
+<p>看看我几个网易云音乐歌单就知道了。</p>
+</blockquote>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>E-Mail: <a href="mailto:neofelhz@gmail.com" target="_blank" rel="noopener"><code>neofelhz@gmail.com</code></a><blockquote>
+<p>每天定时多次检查 Inbox</p>
+</blockquote>
+</li>
+<li>QQ: <code>getDNS.search(&#39;qq.info.nfz.moe&#39;,&#39;TXT&#39;);</code><blockquote>
+<p>You can find me if you want.</p>
+</blockquote>
+</li>
+<li><del>SinaWeibo: <a href="http://weibo.com/neoFelhz" target="_blank" rel="noopener">@neoFelhz</a></del><blockquote>
+<p><del>本人正在使用第三方客户端，恕不接受任何来自微博的私信</del>本人已经不再使用新浪微博。</p>
+</blockquote>
+</li>
+<li>Telegram: <a href="https://telegram.me/neoFelhz" target="_blank" rel="noopener">@neoFelhz</a></li>
+</ul>
+<p>补充几点说明：</p>
+<ul>
+<li>本人不在任何即时通讯软件提供无偿陪聊服务（有偿也不行）<blockquote>
+<p>如果你破译了我的 QQ 号，我一定会接受你的好友申请，但不一定会和你聊天</p>
+</blockquote>
+</li>
+<li>与本博客文章有关的问题，建议直接评论，这样可以让更多人看到讨论的内容<blockquote>
+<p>你在文章后面评论，Disqus 会把评论内容推送到我的 Inbox</p>
+</blockquote>
+</li>
+<li>一些技术相关问题建议发邮件；但是暂不接受项目合作</li>
+<li>无论通过何种方式咨询，请务必一次性把话说清楚，否则不予理会<blockquote>
+<p><a href="https://gist.github.com/zer4tul/95ffaa741c836dc6ab3b" target="_blank" rel="noopener">提问的智慧</a> </p>
+</blockquote>
+</li>
+<li>伸手党会直接拉黑，包括把邮件全部丢进垃圾邮件、禁止该 IP 在我的博客下面评论、在 Telegram 上予以屏蔽，等等。</li>
+</ul>
+<h2 id="版权说明"><a href="#版权说明" class="headerlink" title="版权说明"></a>版权说明</h2><p>除非单独说明，任何个人或者媒体转载本博客的原创内容，都请严格遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 3.0 未本地化版本</a> 的知识共享协议。可阅读 <a href="https://blog.nfz.moe/creativecommons.html" target="_blank" rel="noopener">本博客的知识共享协议说明</a> 了解具体授权说明。</p>
+<h2 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h2><blockquote>
+<p>待到英雄们在铁铸的摇篮中长成,<br>勇敢的心像从前一样,<br>去造访万能的神祗.<br>在这之前,<br>我却常感到,<br>与其孤身独涉,<br>不如安然沉睡.<br>——拾穗</p>
+</blockquote>
+<p>《拾穗者》是法国画家 让·弗朗索瓦·米勒 于 1857 年创作的油画。米勒用横向构图，描绘了三个正在弯着腰、低着头，在收割过的麦田里拾剩落的麦穗的妇女形象。她们穿着粗布衣裙和沉重的旧鞋子，在她们身后是一望无际的麦田、天空和隐约可见的劳动场面。</p>
+<p><strong>有些人拾穗是因为他们被生活所迫，有些人拾穗是因为他们是艺术家，有些人拾穗是因为他们喜欢拾穗。</strong></p>
+<p>就像在已经收获过后的麦田上，我捡起被别人的遗忘的、或是并没有被遗忘的麦穗，小心地收集着，把它们珍藏起来。</p>
+<blockquote>
+<p>想写点属于自己的文字却一直没有提起笔来。<br>渐渐发现独立思考需要文字来记录自己的见解。<br>写点技术、偶尔吐吐槽也好，文艺一把也罢。</p>
+</blockquote>
+<h2 id="博客存活时间"><a href="#博客存活时间" class="headerlink" title="博客存活时间"></a>博客存活时间</h2><script>function secondToDate(second){if(!second){return 0}var time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600}if(second>=3600){time[2]=parseInt(second/3600);second%=3600}if(second>=60){time[3]=parseInt(second/60);second%=60}if(second>0){time[4]=second}return time};function setTime(){var create_time=Math.round(new Date(Date.UTC(2016,08,15,20,14,19)).getTime()/1000);var timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);currentTime=secondToDate((timestamp-create_time));currentTimeHtml=currentTime[0]+'年'+currentTime[1]+'天'+currentTime[2]+'时'+currentTime[3]+'分'+currentTime[4]+'秒';document.getElementById("htmer_time").innerHTML=currentTimeHtml}setInterval(setTime,1000);</script>
+
+<p>本站已运行 <strong><span class="sidebar-badge" id="htmer_time"></span></strong></p>
+]]></content>
+    </entry>
+    
+  
+</search>
