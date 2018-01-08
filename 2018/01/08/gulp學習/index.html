@@ -1,11 +1,491 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
     
-    <entry>
-      <title><![CDATA[gulp學習]]></title>
-      <url>/2018/01/08/gulp%E5%AD%B8%E7%BF%92/</url>
-      <content type="html"><![CDATA[<p>最近看了一些Gulp的學習文章，想說當完兵後，頭腦也空空的就來學吧。<a href="https://gulpjs.com/" target="_blank" rel="noopener">Gulp</a>使用Node.js的streams串流，而我想要學習Gulp的原因很簡單，就是我想要修改程式後不按F5啦(流程自動化)!但是他的優點好像不只這樣，像是監聽檔案、壓縮圖片等等，但是優點太多人說過了我就不說了，直接開幹吧!<br>這次主要學習的文章是<a href="https://markgoodyear.com/2014/01/getting-started-with-gulp/" target="_blank" rel="noopener">Getting started with gulp</a>這篇，但在開始之前還是要先裝個環境。來看看官方的指南!</p>
+    <title>
+        
+            gulp學習 | 
+        
+        Tom Chen&#39;s blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="走走停停，看看風景，享受人生">
+    <meta name="keywords" content=",gulp">
+    <meta name="theme-color" content="#EC407A">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+        
+            <link rel="stylesheet" href="/css/fontawesome.min.css">
+        
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微軟雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #EC407A !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #EC407A !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #EC407A !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Tom Chen&#39;s blog">
+    <meta name="msapplication-starturl" content="http://ssas-ytc5348.c9users.io:8080/2018/01/08/gulp學習/">
+    <meta name="msapplication-navbutton-color" content="#EC407A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Tom Chen&#39;s blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="aaa@gmail.com" />
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://ssas-ytc5348.c9users.io:8080/2018/01/08/gulp學習/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="gulp學習 | Tom Chen&#39;s blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="走走停停，看看風景，享受人生">
+    <meta property="og:article:tag" content="gulp"> 
+
+    
+        <meta property="article:published_time" content="Mon Jan 08 2018 10:23:56 GMT+0800">
+        <meta property="article:modified_time" content="Mon Jan 08 2018 21:01:22 GMT+0000">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://ssas-ytc5348.c9users.io:8080/2018/01/08/gulp學習/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://ssas-ytc5348.c9users.io:8080/2018/01/08/gulp學習/index.html",
+    "headline": "gulp學習",
+    "datePublished": "Mon Jan 08 2018 10:23:56 GMT+0800",
+    "dateModified": "Mon Jan 08 2018 21:01:22 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "Tom Chen",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "黑夜給了我黑色的眼睛，我卻用它尋找光明 -  顧城〈一代人〉"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Tom Chen&#39;s blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",gulp",
+    "description": "走走停停，看看風景，享受人生",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<link rel="stylesheet" href="/css/prism-solarizedlight.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Isolation" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+                    <!-- Isolation Header -->
+                    <header class="header">
+    <div class="header-wrapper">
+        <!-- Header Copyright -->
+        <div class="header-copyright">
+            <div class="header-site">
+                ©&nbsp;
+                <script type="text/javascript">
+                    var fd = new Date();
+                    document.write(fd.getFullYear());
+                </script>
+                &nbsp;Tom Chen's blog
+            </div>
+            <!--
+            I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+            It will not impact the appearance and can give developers a lot of support :)
+
+            很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+            它不会影响美观并可以给开发者很大的支持。 :)
+            -->
+            <div>
+                Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a>
+                <br>
+                Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a>
+            </div>
+        </div>
+
+        <!-- Header Title -->
+        <span class="header-title header-item">
+            <a href="/" title="Tom Chen&#39;s blog">
+                Tom Chen&#39;s blog
+            </a>
+        </span>
+
+        <p class="header-slogan header-item">
+        
+            
+                黑夜給了我黑色的眼睛，我卻用它尋找光明 -  顧城〈一代人〉
+            
+        
+        </p>
+
+        <!-- Header Nav -->
+        <nav class="header-nav header-item">
+            <span class="header-nav-item">
+                <a href="/" title="Home">
+                    <span>Home</span>
+                </a>
+            </span>
+
+            <!-- Pages  -->
+            
+                <span class="header-nav-item">
+                    <a href="/about.html" title="About me">
+                        <span>About me</span>
+                    </a>
+                </span>
+            
+                <span class="header-nav-item">
+                    <a href="/tags.html" title="Tags">
+                        <span>Tags</span>
+                    </a>
+                </span>
+            
+                <span class="header-nav-item">
+                    <a href="/timeline.html" title="Timeline">
+                        <span>Timeline</span>
+                    </a>
+                </span>
+            
+                <span class="header-nav-item">
+                    <a href="/gallery.html" title="Gallery">
+                        <span>Gallery</span>
+                    </a>
+                </span>
+            
+            
+        </nav>
+
+        <!-- Header SNS -->
+        <div class="header-item header-sns_list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/YanTingChen" target="_blank">
+            <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+        </a>
+    
+
+    <!-- LinkedIn -->
+    
+        <a href="https://www.linkedin.com/in/73941645" target="_blank">
+            <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
+        </a>
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+    </div>
+</header>
+
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+
+                    <!-- Post TOC -->
+
+    
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+
+
+    <!-- Isolation Post Header -->
+    <!-- Post thumbnail -->
+    
+        <!-- Post Header Info -->
+        <div class="post-header_info with-thumbnail">
+            <!-- Author Avatar & Name -->
+            <img src="/img/avatar.png" class="avatar-img" width="44px" height="44px" alt="Tom Chen's avatar">
+            <span class="name-span">Tom Chen</span>
+        </div>
+
+        <!-- Custom thumbnail -->
+        <div class="post_thumbnail-custom">
+            <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/01/1484835114gulp-cover.png">
+    
+        </div>
+
+
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+
+    
+        <div class="post-content_wrapper">
+            <p class="post-title">
+                gulp學習
+            </p>
+            <p>最近看了一些Gulp的學習文章，想說當完兵後，頭腦也空空的就來學吧。<a href="https://gulpjs.com/" target="_blank" rel="noopener">Gulp</a>使用Node.js的streams串流，而我想要學習Gulp的原因很簡單，就是我想要修改程式後不按F5啦(流程自動化)!但是他的優點好像不只這樣，像是監聽檔案、壓縮圖片等等，但是優點太多人說過了我就不說了，直接開幹吧!<br>這次主要學習的文章是<a href="https://markgoodyear.com/2014/01/getting-started-with-gulp/" target="_blank" rel="noopener">Getting started with gulp</a>這篇，但在開始之前還是要先裝個環境。來看看官方的指南!</p>
 <h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><ol>
 <li>全局安裝 CLI version：<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --global gulp
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -134,200 +614,170 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
 
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      
-        <categories>
-            
-            <category> 技術 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> gulp </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[在Cloud9 (C9.io) 開發Hexo]]></title>
-      <url>/2018/01/07/%E5%9C%A8C9-io%E9%96%8B%E7%99%BCHexo/</url>
-      <content type="html"><![CDATA[<p><a href="https://c9.io/" target="_blank" rel="noopener">Cloud 9</a> 是一個開源的網路專案，它採用Node.js作為整個整合開發環境的核心，執行速度、擴充性以及操作使用都與目前眾多的開發環境相似，且啟動速度更快，更為便利。<br>簡單來說就是npm都幫你裝好了，我們先開個一般的html專案就可以了(圖一)<br><img src="https://i.loli.net/2018/01/08/5a525687c3645.png" alt="Alt text" title="圖一"></p>
-<h3 id="安裝Hexo"><a href="#安裝Hexo" class="headerlink" title="安裝Hexo"></a>安裝Hexo</h3><p>接著看到下面的終端機(Terminal)，輸入下面這個指令安裝我們要使用的網誌框架</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="建置部落格"><a href="#建置部落格" class="headerlink" title="建置部落格"></a>建置部落格</h3><p>安裝好後就讓我們建置一個新的專案，blog是你的部落格名稱喔!</p>
-<pre class="line-numbers language-bash"><code class="language-bash">hexo init blog
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="安裝Git"><a href="#安裝Git" class="headerlink" title="安裝Git"></a>安裝Git</h3><p>接著進去專案裡面，安裝Git，好讓你能發布</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> blog
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="啟動"><a href="#啟動" class="headerlink" title="啟動"></a>啟動</h3><p>最後就直接啟動吧!</p>
-<pre class="line-numbers language-bash"><code class="language-bash">hexo server -i <span class="token variable">$IP</span> -p <span class="token variable">$PORT</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="超級懶人包"><a href="#超級懶人包" class="headerlink" title="超級懶人包"></a>超級懶人包</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
-hexo init blog
-<span class="token function">cd</span> blog
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
-hexo server -i <span class="token variable">$IP</span> -p <span class="token variable">$PORT</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      
-        <categories>
-            
-            <category> 技術 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> C9 </tag>
-            
-            <tag> node.js </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>/2018/01/05/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 心情 </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-  
-  
-    
-    <entry>
-      <title><![CDATA[Tom Chen's Blog 知識共享協議說明]]></title>
-      <url>/creativecommons.html</url>
-      <content type="html"><![CDATA[<h1 id="關於知識共享協議的說明"><a href="#關於知識共享協議的說明" class="headerlink" title="關於知識共享協議的說明"></a>關於知識共享協議的說明</h1><p>Yan Ting Chen（以下簡稱本人），是「Tom Chen’s blog」博客（以下簡稱本博客）的擁有者。本博客上創造和發佈的內容可用於傳播和共享，對於本人發佈的原創內容（包含圖片、文字、音樂、視頻）採用 CreativeCommons 4.0 Unported 協議，即 知識共享許可協議 4.0 未本地化版本 加以許可保護。作者在發佈內容時，如果沒有特殊註明，默認將會採用 知識共享協議 署名-非商業性使用-相同方式共享 4.0 未本地化版本 (CC BY-NC-SA 4.0 Unported) 對原創內容進行保護。</p>
-<h1 id="關於知識共享協議的補充說明"><a href="#關於知識共享協議的補充說明" class="headerlink" title="關於知識共享協議的補充說明"></a>關於知識共享協議的補充說明</h1><h2 id="侵權有關"><a href="#侵權有關" class="headerlink" title="侵權有關"></a>侵權有關</h2><p>如個人或單位發現本博客上存在侵犯其自身合法權益的內容，請及時與本人取得聯繫，並提供具有法律效力的證明材料，以便本人作出處理。</p>
-<h2 id="非原創作品商業使用有關"><a href="#非原創作品商業使用有關" class="headerlink" title="非原創作品商業使用有關"></a>非原創作品商業使用有關</h2><p>任何被本博客劃收錄的非原創作品，原作者依然持有商業使用其作品的權利。<br>如果您希望商業使用這些被收錄的內容，請與所有 <strong>參與此作品創作的原作者</strong> 和/或 <strong>版權持有者</strong> 進行協商。在與所有人達成協議後，方可商業使用。<br>（本博客及其本人不進行任何商業接洽工作，請自行與作者聯繫）</p>
-<h1 id="CC-4-0-Unported-協議概要"><a href="#CC-4-0-Unported-協議概要" class="headerlink" title="CC 4.0 Unported 協議概要"></a>CC 4.0 Unported 協議概要</h1><h2 id="語言：中文"><a href="#語言：中文" class="headerlink" title="語言：中文"></a><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank" rel="noopener">語言：中文</a></h2><blockquote>
-<p>該<code>協議摘要</code>摘抄於Sat Jan 03 2018 20:00:02 GMT+0800 (台灣標準時間)<br>這是一份普通人可以理解的許可協議概要 (並非<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcodee" target="_blank" rel="noopener">授權條款</a>的替代內容 )  。</p>
-</blockquote>
-<p><strong>你可以自由：</strong></p>
-<ul>
-<li><strong>分享</strong> — 以任何媒介或格式重製及散佈本素材</li>
-<li><strong>修改</strong> — 重混、轉換本素材、及依本素材建立新素材</li>
-<li>只要你遵守授權條款規定，授權人不能撤回你使用本素材的自由。</li>
-</ul>
-<p><strong>惟需遵照下列條件：</strong></p>
-<ul>
-<li><strong>姓名標示</strong> — 你必須給予適當表彰、提供指向本授權條款的連結，以及 <strong> 指出（本作品的原始版本）是否已被變更。</strong> 你可以任何合理方式為前述表彰，但不得以任何方式暗示授權人為你或你的使用方式背書。</li>
-<li><strong>非商業性</strong> — 你不得將本素材進行商業目的之使用。</li>
-<li><strong>相同方式分享</strong> — 若你重混、轉換本素材，或依本素材建立新素材，你必須依 <strong>本素材的授權條款</strong>來散佈你的貢獻物。</li>
-<li><strong>不得增加額外限制</strong> — 你不能增設法律條款或科技措施，來限制別人依授權條款本已許可的作為。</li>
-</ul>
-<h2 id="Language-English"><a href="#Language-English" class="headerlink" title="Language:English"></a><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank" rel="noopener">Language:English</a></h2><blockquote>
-<p>This copy was copied at Sat Jan 03 2018 20:00:02 GMT+0800 (Asia/Taipei)<br>This is a human-readable summary of (and not a substitute for) the license.</p>
-</blockquote>
-<p><strong>You are free to:</strong></p>
-<ul>
-<li><strong>Share</strong> — copy and redistribute the material in any medium or format</li>
-<li><strong>Adapt</strong> — remix, transform, and build upon the material</li>
-<li>The licensor cannot revoke these freedoms as long as you follow the license terms.</li>
-</ul>
-<p><strong>Under the following terms:</strong></p>
-<ul>
-<li><strong>Attribution</strong> — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>
-<li><strong>NonCommercial</strong> — You may not use the material for commercial purposes.</li>
-<li><strong>ShareAlike</strong> — If you remix, transform, or build upon the material, you must distribute your contributions under the <strong>same license</strong> as the original.</li>
-<li><strong>No additional restrictions</strong> — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</li>
-</ul>
-<blockquote>
-<p>商業目的指的是通過使用分享來的內容用於商業活動當中或用於獲得經濟上的補償。<br>Commercial purposes refers to the use of shared content to be used in business or to obtain economic compensation.</p>
-</blockquote>
-<h1 id="CC-4-0-Unported-完整協議"><a href="#CC-4-0-Unported-完整協議" class="headerlink" title="CC 4.0 Unported 完整協議"></a>CC 4.0 Unported 完整協議</h1><h2 id="Language-English-1"><a href="#Language-English-1" class="headerlink" title="Language:English"></a>Language:English</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank" rel="noopener">CC by-nc-sa 4.0 Unported Legalcode</a></p>
-<h2 id="語言：中文-1"><a href="#語言：中文-1" class="headerlink" title="語言：中文"></a>語言：中文</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/tw/legalcode" target="_blank" rel="noopener">知識共享協議姓名標示-非商業性-相同方式分享 3.0 台灣 許可協議</a></p>
-<blockquote>
-<p>因為4.0中文版皆還在翻譯狀態，故放上3.0協議 </p>
-</blockquote>
-<h1 id="您如何在不違反知識共享協議條約的基礎上使用本博客的原創內容"><a href="#您如何在不違反知識共享協議條約的基礎上使用本博客的原創內容" class="headerlink" title="您如何在不違反知識共享協議條約的基礎上使用本博客的原創內容"></a>您如何在不違反知識共享協議條約的基礎上使用本博客的原創內容</h1><h2 id="商業使用"><a href="#商業使用" class="headerlink" title="商業使用"></a>商業使用</h2><p><strong> CC 4.0 BY-NC-SA Unported</strong> 協議規定，只要他人註明本人的姓名並在以本人的作品為基礎創作的新作品上適用同一類型的許可協議，該他人就可基於非商業目的對您的作品重新編排、節選或者以本人的作品為基礎進行創作。基於本人的作品創作的所有新作品都要適用同一類型的許可協議，因此適用該項協議則對任何以您的原作為基礎創作的演繹作品自然同樣 都不得進行商業性使用。</p>
-<h2 id="姓名標示"><a href="#姓名標示" class="headerlink" title="姓名標示"></a>姓名標示</h2><p>在轉載本博客中任何內容時必須給出原頁面的 URL 鏈接，並註明文章（全文，部分）從「Tom Chen’s Blog」 或轉載，並提供一個與 CC 4.0 BY-NC-SA Unported 不相違背的知識共享協議的許可證；<br>如果你對本博客的原創內容進行了修改，則必須註明修改的內容；並提供 <strong>CC 4.0 BY-NC-SA 協議</strong> 的<a href="https://creativecommons.org/choose/results-one?license_code=by-nc-sa&amp;jurisdiction=&amp;version=4.0&amp;lang=zh_TW" target="_blank" rel="noopener">許可證</a></p>
-<h2 id="修改政策"><a href="#修改政策" class="headerlink" title="修改政策"></a>修改政策</h2><p>本博客屬於所有在網絡上公開發表的，任何人可訪問的作品，故本人在這裡明確聲明 <strong>所有原創內容均允許修改</strong>。</p>
-<blockquote>
-<p>知識共享協議中對 <em>修改</em> 的定義是：在不改變原作者的原創內容的含義和內涵的基礎上，對原創內容進行 節選、翻譯、重排版，或將原作者的原創內容作為論據和素材，或基於原作者的原創內容進行二次創作。</p>
-</blockquote>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[關於我]]></title>
-      <url>/about.html</url>
-      <content type="html"><![CDATA[<h2 id="我是誰"><a href="#我是誰" class="headerlink" title="我是誰"></a>我是誰</h2><p>我是Tom Chen，也可以稱呼我YTC。<br>喜歡嘗試新事物，喜歡自由和無拘無束、不喜歡被束縛。</p>
-<p>空閒時會研究認知心理、行為分析，對使用者經驗有些微研究，而本身是個愛旅遊的人，喜歡透過自助旅行來感受當地的文化氣息，去過的地方有日本和香港。</p>
-<blockquote>
-<p>喜歡打保齡球、射飛鏢、游泳、PC game，也是個對桌遊重度著迷的玩家<br>對英美影集、藝術史也有濃厚興趣</p>
-</blockquote>
-<hr>
-<p>I’m Tom Chen, a software engineer and web developer. I first began my journey into code whilst studying Information management at NUTC .<br>During my final year, I juggled assignments with part time work at Exosite where I learn automated tests and develope website,I gained a considerable amount of experience from there.</p>
-<hr>
-<h2 id="Catch-me-if-you-can"><a href="#Catch-me-if-you-can" class="headerlink" title="Catch me if you can"></a>Catch me if you can</h2><ul>
-<li>一些技術相關問題建議發郵件</li>
-<li>無論通過何種方式諮詢，請務必一次性把話說清楚，否則不予理會</li>
-</ul>
-<blockquote>
-<p><a href="http://mis.ndhu.edu.tw/docu/question.htm" target="_blank" rel="noopener">提問的智慧</a> </p>
-</blockquote>
-<ul>
-<li>E-Mail: <a href="mailto:h5648912@gmail.com" target="_blank" rel="noopener"><code>h5648912@gmail.com</code></a></li>
-</ul>
-<blockquote>
-<p>每天都會檢查信箱</p>
-</blockquote>
-<h2 id="版權說明"><a href="#版權說明" class="headerlink" title="版權說明"></a>版權說明</h2><p>除非單獨說明，任何個人或者媒體轉載本博客的原創內容，都請嚴格遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank" rel="noopener">署名-非商業性使用-相同方式共享 4.0 未本地化版本</a> 的知識共享協議。可閱讀 <a href="/creativecommons.html">本博客的知識共享協議說明</a> 瞭解具體授權說明。</p>
-<h2 id="本站存活時間"><a href="#本站存活時間" class="headerlink" title="本站存活時間"></a>本站存活時間</h2><script>function secondToDate(second){if(!second){return 0}var time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600}if(second>=3600){time[2]=parseInt(second/3600);second%=3600}if(second>=60){time[3]=parseInt(second/60);second%=60}if(second>0){time[4]=second}return time};function setTime(){var create_time=Math.round(new Date(Date.UTC(2017,10,15,10,23,04)).getTime()/1000);var timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);currentTime=secondToDate((timestamp-create_time));currentTimeHtml=currentTime[0]+'年'+currentTime[1]+'天'+currentTime[2]+'時'+currentTime[3]+'分'+currentTime[4]+'秒';document.getElementById("htmer_time").innerHTML=currentTimeHtml}setInterval(setTime,1000);</script>
 
-<p> <strong><span class="sidebar-badge" id="htmer_time"></span></strong></p>
-]]></content>
-    </entry>
+            
+        </div>
     
-    <entry>
-      <title><![CDATA[「時間軸」]]></title>
-      <url>/timeline.html</url>
-      <content type="html"></content>
-    </entry>
+</div>
+
+
+                
+                    <!-- Paradox Post Info -->
+                    
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-    <entry>
-      <title><![CDATA[標籤]]></title>
-      <url>/tags.html</url>
-      <content type="html"></content>
-    </entry>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
     
-    <entry>
-      <title><![CDATA[圖庫]]></title>
-      <url>//gallery.html</url>
-      <content type="html"></content>
-    </entry>
+        <a href="/2018/01/07/在C9-io開發Hexo/" id="post_nav-older" class="next-content">
+            Previous
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
-  
-</search>
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
