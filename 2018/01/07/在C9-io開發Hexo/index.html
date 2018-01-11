@@ -243,7 +243,7 @@
 
     
         <meta property="article:published_time" content="Sun Jan 07 2018 09:23:47 GMT+0800">
-        <meta property="article:modified_time" content="Mon Jan 08 2018 21:04:32 GMT+0000">
+        <meta property="article:modified_time" content="Tue Jan 09 2018 03:42:21 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -266,7 +266,7 @@
     "mainEntityOfPage": "http://ssas-ytc5348.c9users.io:8080/2018/01/07/在C9-io開發Hexo/index.html",
     "headline": "在Cloud9 (C9.io) 開發Hexo",
     "datePublished": "Sun Jan 07 2018 09:23:47 GMT+0800",
-    "dateModified": "Mon Jan 08 2018 21:04:32 GMT+0000",
+    "dateModified": "Tue Jan 09 2018 03:42:21 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Tom Chen",
@@ -487,23 +487,23 @@
             </p>
             <p><a href="https://c9.io/" target="_blank" rel="noopener">Cloud 9</a> 是一個開源的網路專案，它採用Node.js作為整個整合開發環境的核心，執行速度、擴充性以及操作使用都與目前眾多的開發環境相似，且啟動速度更快，更為便利。<br>簡單來說就是npm都幫你裝好了，我們先開個一般的html專案就可以了(圖一)<br><img src="https://i.loli.net/2018/01/08/5a525687c3645.png" alt="Alt text" title="圖一"></p>
 <h3 id="安裝Hexo"><a href="#安裝Hexo" class="headerlink" title="安裝Hexo"></a>安裝Hexo</h3><p>接著看到下面的終端機(Terminal)，輸入下面這個指令安裝我們要使用的網誌框架</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="建置部落格"><a href="#建置部落格" class="headerlink" title="建置部落格"></a>建置部落格</h3><p>安裝好後就讓我們建置一個新的專案，blog是你的部落格名稱喔!</p>
-<pre class="line-numbers language-bash"><code class="language-bash">hexo init blog
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo init blog
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="安裝Git"><a href="#安裝Git" class="headerlink" title="安裝Git"></a>安裝Git</h3><p>接著進去專案裡面，安裝Git，好讓你能發布</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> blog
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cd</span> blog
+$ <span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="啟動"><a href="#啟動" class="headerlink" title="啟動"></a>啟動</h3><p>最後就直接啟動吧!</p>
-<pre class="line-numbers language-bash"><code class="language-bash">hexo server -i <span class="token variable">$IP</span> -p <span class="token variable">$PORT</span>
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo server -i <span class="token variable">$IP</span> -p <span class="token variable">$PORT</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="超級懶人包"><a href="#超級懶人包" class="headerlink" title="超級懶人包"></a>超級懶人包</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
-hexo init blog
-<span class="token function">cd</span> blog
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
-hexo server -i <span class="token variable">$IP</span> -p <span class="token variable">$PORT</span>
+<h2 id="超級懶人包"><a href="#超級懶人包" class="headerlink" title="超級懶人包"></a>超級懶人包</h2><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
+$ hexo init blog
+$ <span class="token function">cd</span> blog
+$ <span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
+$ hexo server -i <span class="token variable">$IP</span> -p <span class="token variable">$PORT</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             
@@ -540,14 +540,6 @@ hexo server -i <span class="token variable">$IP</span> -p <span class="token var
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
-    
-        <a href="/2018/01/05/hello-world/" id="post_nav-older" class="next-content">
-            Previous
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
     
 </nav>
 

@@ -43,6 +43,8 @@
     
     <title>
         
+            ESLint學習 | 
+        
         Tom Chen&#39;s blog
     </title>
 
@@ -52,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="走走停停，看看風景，享受人生">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",ESLint,javascript">
     <meta name="theme-color" content="#EC407A">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Tom Chen&#39;s blog">
-    <meta name="msapplication-starturl" content="http://ssas-ytc5348.c9users.io:8080/">
+    <meta name="msapplication-starturl" content="http://ssas-ytc5348.c9users.io:8080/2018/01/10/ESLint/">
     <meta name="msapplication-navbutton-color" content="#EC407A">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Tom Chen&#39;s blog">
@@ -232,13 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://ssas-ytc5348.c9users.io:8080/">
+    <meta property="og:url" content="http://ssas-ytc5348.c9users.io:8080/2018/01/10/ESLint/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Tom Chen&#39;s blog">
+    <meta property="og:title" content="ESLint學習 | Tom Chen&#39;s blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="走走停停，看看風景，享受人生">
-    
+    <meta property="og:article:tag" content="ESLint"> <meta property="og:article:tag" content="javascript"> 
 
+    
+        <meta property="article:published_time" content="Wed Jan 10 2018 21:14:34 GMT+0800">
+        <meta property="article:modified_time" content="Thu Jan 11 2018 15:50:46 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -246,35 +251,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://ssas-ytc5348.c9users.io:8080" />
+        <link rel="canonical" href="http://ssas-ytc5348.c9users.io:8080/2018/01/10/ESLint/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
+
+
 <script type="application/ld+json">
 {
-    "@context": "http://schema.org",
-    "@type": "Website",
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://ssas-ytc5348.c9users.io:8080/2018/01/10/ESLint/index.html",
+    "headline": "ESLint學習",
+    "datePublished": "Wed Jan 10 2018 21:14:34 GMT+0800",
+    "dateModified": "Thu Jan 11 2018 15:50:46 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "Tom Chen",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "黑夜給了我黑色的眼睛，我卻用它尋找光明 -  顧城〈一代人〉"
+    },
     "publisher": {
         "@type": "Organization",
         "name": "Tom Chen&#39;s blog",
-        "logo": "/img/favicon.png"
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
     },
-    "url": "http://ssas-ytc5348.c9users.io:8080",
-    "image": {
-        "@type": "ImageObject",
-        "url": "/img/favicon.png"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://ssas-ytc5348.c9users.io:8080"
-    },
-    "description": "走走停停，看看風景，享受人生"
+    "keywords": ",ESLint,javascript",
+    "description": "走走停停，看看風景，享受人生",
 }
 </script>
-
-
 
 
     
@@ -425,25 +438,29 @@
 
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
 
-    <!-- Normal Post -->
-    
-        
-            
-            
-                <!-- Isolation Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post_entry Header -->
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+
+
+    <!-- Isolation Post Header -->
+    <!-- Post thumbnail -->
     
         <!-- Post Header Info -->
-        <div class="post_entry-header_info with-thumbnail">
+        <div class="post-header_info with-thumbnail">
             <!-- Author Avatar & Name -->
             <img src="/img/avatar.png" class="avatar-img" width="44px" height="44px" alt="Tom Chen's avatar">
             <span class="name-span">Tom Chen</span>
@@ -455,171 +472,120 @@
     
         </div>
 
-    <!-- Post_entry Content -->
-    <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
-        <!-- Post Title -->
-        <p class="post_entry-title">
-            <a href="/2018/01/10/ESLint/">ESLint學習</a>
-        </p>
 
-        <!-- Post Excerpt -->
-        <p class="post_entry-excerpt">
-            
-                ESLint是個JS風格規定套件，主要用於專案合作中為避免低級的Bug、產出風格統一且高品質的代碼，會預先制定編碼規範。ESLint幫助我們檢查寫J...
-            
-            &nbsp;&nbsp;&nbsp;
-            <span>
-                <a href="/2018/01/10/ESLint/" target="_self">Read more</a>
-            </span>
-        </p>
 
-        <!-- Post Tags -->
-        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/ESLint/">ESLint</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-    <!-- Post_entry Footer -->
-    <div class="post_entry-footer">
-        <div class="post_entry-footer-border"></div>
-        <div class="post_entry-footer-info">
-            <div class="post_entry-footer-date">
-                Jan 10, 2018
-            </div>
-            <div class="post_entry-footer-comment">
                 
-                
-            </div>
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+
+    
+        <div class="post-content_wrapper">
+            <p class="post-title">
+                ESLint學習
+            </p>
+            <p>ESLint是個JS風格規定套件，主要用於專案合作中為避免低級的Bug、產出風格統一且高品質的代碼，會預先制定編碼規範。ESLint幫助我們檢查寫Javascript時的語法錯誤。我個人是滿需要的，因為常常會忘記加上()或變數寫錯之類的…，不過在開始前要先安裝Javascript ES6的環境。</p>
+<p>如果要使用Javascript ES6的話，就必須先安裝<a href="http://babeljs.io/" target="_blank" rel="noopener">babel</a>。而這套件竟然還有歌曲(? 太神了吧，我使用的方式是直接安裝在project內部(但全局我也有裝)，而我使用的Node.js版本是7.7.3所以可以直接安裝<a href="https://www.npmjs.com/package/babel-preset-es6-node6" target="_blank" rel="noopener">babel-preset-es6-node6</a>而不是<a href="https://www.npmjs.com/package/babel-preset-es2015" target="_blank" rel="noopener">babel-preset-es2015</a>(es2015表示ES6轉換器，stage-3表示ES7轉換器)。 </p>
+<h3 id="安裝Babel"><a href="#安裝Babel" class="headerlink" title="安裝Babel"></a>安裝Babel</h3><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g --save-dev babel-cli babel-preset-env babel-polyfill babel-preset-es6-node6 babel-preset-stage-3
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安裝完後的<em>package.json</em> 檔案<br><img src="https://i.loli.net/2018/01/11/5a57802f887e0.png" alt="Alt text" title="package.json"><br>在專案中新建 <em>.babelrc檔案</em>，並輸入下面那段語法，如果你是安裝babel-preset-es2015，請自己把es6-node6換成es2015。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">touch</span> .babelrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>.babelrc檔案</p>
+</blockquote>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    presets<span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"es6-node6"</span><span class="token punctuation">,</span> <span class="token string">"stage-3"</span> <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>接下來只要直接執行 <em>babel-node your-file.js</em> 就可以成功執行了。但我的主要目的還沒達到，接著繼續安裝<a href="https://eslint.org/" target="_blank" rel="noopener">ESLint</a> &amp; <a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base" target="_blank" rel="noopener">airbnb-javascript-rules</a>!</p>
+<hr>
+<h3 id="安裝-ESLint-和-airbnb-javascript-rules"><a href="#安裝-ESLint-和-airbnb-javascript-rules" class="headerlink" title="安裝 ESLint 和 airbnb-javascript-rules"></a>安裝 ESLint 和 airbnb-javascript-rules</h3><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> eslint babel-eslint -g --save-dev
+$ <span class="token function">npm</span> <span class="token function">install</span> eslint-config-airbnb-base eslint-plugin-import -g --save-dev
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2018/01/11/5a5781b3693ec.png" alt="Alt text" title="package.json"><br>在專案中新建 <em>.eslintrc檔案</em> 設定檔，並輸入下面那段語法。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">touch</span> .eslintrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>.eslintrc檔案</p>
+</blockquote>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"parser"</span><span class="token operator">:</span> <span class="token string">"babel-eslint"</span><span class="token punctuation">,</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"airbnb-base"</span><span class="token punctuation">,</span>
+  <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"semi"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"never"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"arrow-body-style"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token string">"always"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"no-console"</span><span class="token operator">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"browser"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"node"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"plugins"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"import"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>這邊就是重點了，因為是初學所以就先看看別人的設定，然後慢慢修改，大概解說一下：</p>
+<ul>
+<li>parser: 指的是解析器，如果有安裝babel編譯器，就是設定<em>babel-eslint</em>。</li>
+<li>extends: 設定規則設定檔，這裡使用<em>airbnb-base</em>。</li>
+<li>rules: 額外的規則，像是語句結尾不用分號</li>
+<li>env: 環境設定在browser或node上使用。</li>
+<li>plugins: 設定插件，這裡使用<em>eslint-plugin-import</em>。</li>
+</ul>
+<p>接著就可以運行ESLint了!會看到非常多錯誤QAQ，但是在後面加上個<em>–fix</em> 會自動幫你解決一些排版小問題。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ eslint yourfile.js --fix
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>想要更了解的ESLint的可以看看參考資料，裡面都寫得很詳細，這篇文只是簡單實作後的紀錄。</p>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料:"></a>參考資料:</h3><ul>
+<li><a href="https://ithelp.ithome.com.tw/articles/10184924" target="_blank" rel="noopener">Day 03: ESLint - Lint工具的後起之秀</a></li>
+<li><a href="http://seans.tw/2016/use-es6-es7-on-nodejs/" target="_blank" rel="noopener">使用ES6與ES7在nodejs上執行程式</a></li>
+<li><a href="http://seans.tw/2016/eslint-with-airbnb/" target="_blank" rel="noopener">用eslint X Airbnb js-rules改善程式碼品質</a></li>
+<li><a href="https://www.jianshu.com/p/f2f06a0e154b" target="_blank" rel="noopener">EsLint入门学习整理</a></li>
+</ul>
+
+            
         </div>
-    </div>
+    
 </div>
 
-            
-        
-    
-        
-            
-            
-                <!-- Isolation Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post_entry Header -->
-    
-        <!-- Post Header Info -->
-        <div class="post_entry-header_info with-thumbnail">
-            <!-- Author Avatar & Name -->
-            <img src="/img/avatar.png" class="avatar-img" width="44px" height="44px" alt="Tom Chen's avatar">
-            <span class="name-span">Tom Chen</span>
-        </div>
 
-        <!-- Custom thumbnail -->
-        <div class="post_thumbnail-custom">
-            <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/01/1484835114gulp-cover.png">
-    
-        </div>
-
-    <!-- Post_entry Content -->
-    <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
-        <!-- Post Title -->
-        <p class="post_entry-title">
-            <a href="/2018/01/08/gulp學習/">gulp學習</a>
-        </p>
-
-        <!-- Post Excerpt -->
-        <p class="post_entry-excerpt">
-            
-                最近看了一些Gulp的學習文章，想說當完兵後，頭腦也空空的就來學吧。
-            
-            &nbsp;&nbsp;&nbsp;
-            <span>
-                <a href="/2018/01/08/gulp學習/" target="_self">Read more</a>
-            </span>
-        </p>
-
-        <!-- Post Tags -->
-        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/gulp/">gulp</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-    <!-- Post_entry Footer -->
-    <div class="post_entry-footer">
-        <div class="post_entry-footer-border"></div>
-        <div class="post_entry-footer-info">
-            <div class="post_entry-footer-date">
-                Jan 08, 2018
-            </div>
-            <div class="post_entry-footer-comment">
                 
+                    <!-- Paradox Post Info -->
+                    
+                
+
+                <!-- Post Comments -->
+                
+                    
                 
             </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/01/08/gulp學習/" id="post_nav-older" class="next-content">
+            Previous
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
         </div>
     </div>
-</div>
 
-            
-        
-    
-        
-            
-            
-                <!-- Isolation Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post_entry Header -->
-    
-        <!-- Post Header Info -->
-        <div class="post_entry-header_info with-thumbnail">
-            <!-- Author Avatar & Name -->
-            <img src="/img/avatar.png" class="avatar-img" width="44px" height="44px" alt="Tom Chen's avatar">
-            <span class="name-span">Tom Chen</span>
-        </div>
-
-        <!-- Custom thumbnail -->
-        <div class="post_thumbnail-custom">
-            <img src="https://raw.githubusercontent.com/hexojs/logo/master/hexo-logo.png">
-    
-        </div>
-
-    <!-- Post_entry Content -->
-    <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
-        <!-- Post Title -->
-        <p class="post_entry-title">
-            <a href="/2018/01/07/在C9-io開發Hexo/">在Cloud9 (C9.io) 開發Hexo</a>
-        </p>
-
-        <!-- Post Excerpt -->
-        <p class="post_entry-excerpt">
-            
-                Cloud 9 是一個開源的...
-            
-            &nbsp;&nbsp;&nbsp;
-            <span>
-                <a href="/2018/01/07/在C9-io開發Hexo/" target="_self">Read more</a>
-            </span>
-        </p>
-
-        <!-- Post Tags -->
-        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/C9/">C9</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/Hexo/">Hexo</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/node-js/">node.js</a></li></ul>
-    </div>
-
-    <!-- Post_entry Footer -->
-    <div class="post_entry-footer">
-        <div class="post_entry-footer-border"></div>
-        <div class="post_entry-footer-info">
-            <div class="post_entry-footer-date">
-                Jan 07, 2018
-            </div>
-            <div class="post_entry-footer-comment">
-                
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-            
-        
-    
-
-    
-
-    
-</div>
 
 
                     
@@ -676,12 +642,6 @@
 
 
 
-
-    <!-- Swiftye -->
-    
-
-    <!-- Local Search-->
-    
 
 
 <!-- UC Browser Compatible -->

@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="走走停停，看看風景，享受人生">
-    <meta name="keywords" content=",gulp">
+    <meta name="keywords" content=",javascript,gulp">
     <meta name="theme-color" content="#EC407A">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -239,11 +239,11 @@
     <meta property="og:title" content="gulp學習 | Tom Chen&#39;s blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="走走停停，看看風景，享受人生">
-    <meta property="og:article:tag" content="gulp"> 
+    <meta property="og:article:tag" content="javascript"> <meta property="og:article:tag" content="gulp"> 
 
     
         <meta property="article:published_time" content="Mon Jan 08 2018 10:23:56 GMT+0800">
-        <meta property="article:modified_time" content="Mon Jan 08 2018 21:01:22 GMT+0000">
+        <meta property="article:modified_time" content="Thu Jan 11 2018 13:55:50 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -266,7 +266,7 @@
     "mainEntityOfPage": "http://ssas-ytc5348.c9users.io:8080/2018/01/08/gulp學習/index.html",
     "headline": "gulp學習",
     "datePublished": "Mon Jan 08 2018 10:23:56 GMT+0800",
-    "dateModified": "Mon Jan 08 2018 21:01:22 GMT+0000",
+    "dateModified": "Thu Jan 11 2018 13:55:50 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "Tom Chen",
@@ -284,7 +284,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",gulp",
+    "keywords": ",javascript,gulp",
     "description": "走走停停，看看風景，享受人生",
 }
 </script>
@@ -512,7 +512,7 @@ $ gulp -v
 </li>
 </ol>
 <h2 id="目錄結構"><a href="#目錄結構" class="headerlink" title="目錄結構"></a>目錄結構</h2><p>基本設置已經完成，在這邊先停一下，我發現要使用Gulp時，目錄結構非常重要，不然找不到檔案，所以建議檔案結構可以參考下面這個簡易的目錄。<br>可參考比較完整的<a href="https://leohxj.gitbooks.io/a-programmer-prepares/programmer-basic/directory.html" target="_blank" rel="noopener">目錄建構</a></p>
-<p>├── [Project Name]<br>├──── [src]<br>├─────── [scripts]<br>├─────── [styles]<br>├─────── [images]<br>├─────── index.html<br>├──── [dist]<br>├─────── [assets]<br>├────────── [js]<br>├────────── [css]<br>├────────── [img]<br>├─────── index.html<br>├──── gulpfile.js</p>
+<p>├── [Project Name]<br>├──── [src]<br>├─────── [scripts]<br>├─────── [styles]<br>├─────── [images]<br>├─────── index.html<br>├──── [dist]<br>├─────── [js]<br>├─────── [css]<br>├─────── [img]<br>├─────── index.html<br>├──── gulpfile.js</p>
 <p>接下來就來看看官方的API文件(gulp API docs)，非常多的API，但我這次練習不用到這麼多，主要用到<br>gulp.src(globs[, options])</p>
 <blockquote>
 <p>指定檔案來源</p>
@@ -529,14 +529,15 @@ $ gulp -v
 <blockquote>
 <p>監聽特定檔案是否修改</p>
 </blockquote>
+<p>而Gulp本身的API很簡單，使用 gulp.task 定義一系列的任務，使用 gulp.src 讀取文件，使用 .pipe() 進行一系列的處理，使用 gulp.dest 輸出處理後的文件，並使用 gulp.watch 監聽文件的更改。</p>
 <h2 id="開始寫gulpfile-js"><a href="#開始寫gulpfile-js" class="headerlink" title="開始寫gulpfile.js"></a>開始寫gulpfile.js</h2><p>接下來跟著教學來安裝套件學習吧。<br>安裝一些套件</p>
 <pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> gulp-ruby-sass gulp-autoprefixer gulp-cssnano gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>安裝清單</p>
 <blockquote>
-<p>編譯 Sass（gulp-ruby-sass）<br>Autoprefixer（gulp-autoprefixer）<br>縮小化（minify）CSS（gulp-cssnano）<br>JSHint（gulp-jshint）<br>串接（gulp-concat）<br>醜化（Uglify）（gulp-uglify）<br>壓縮圖檔（gulp-imagemin）<br>即時重整（LiveReload）（gulp-livereload）<br>快取圖片，只有變更的圖檔才會壓縮處理（gulp-cache）<br>通知更動（gulp-notify）<br>清除檔案，有個乾淨的建構環境（del）</p>
+<p>編譯 Sass（gulp-ruby-sass）<br>Autoprefixer（gulp-autoprefixer）<br>縮小化（minify）CSS（gulp-cssnano）<br>JSHint（gulp-jshint）<br>合併檔案（gulp-concat）<br>壓縮混淆 JavaScript 檔案（Uglify）（gulp-uglify）<br>壓縮圖檔（gulp-imagemin）<br>即時重整（LiveReload）（gulp-livereload）<br>快取圖片，只有變更的圖檔才會壓縮處理（gulp-cache）<br>通知更動（gulp-notify）<br>清除檔案，有個乾淨的建構環境（del）</p>
 </blockquote>
-<p>接著完成第一次練習用code，直接看code看到眼睛脫窗….，pipe()是用來串聯外掛檔的，基本上看懂上面的清單就知道任務是怎麼執行的了!</p>
+<p>接著完成第一次練習用code，直接看code看到眼睛脫窗…，基本上看懂上面的清單就知道任務是怎麼執行的了!</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//包含gulp和所有需要的插件</span>
 <span class="token keyword">var</span> gulp <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     sass <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp-ruby-sass'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -635,6 +636,14 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2018/01/10/ESLint/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Next
+        </a>
     
 
     <!-- Section Spacer -->

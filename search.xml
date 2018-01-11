@@ -3,6 +3,88 @@
   
     
     <entry>
+      <title><![CDATA[ESLint學習]]></title>
+      <url>/2018/01/10/ESLint/</url>
+      <content type="html"><![CDATA[<p>ESLint是個JS風格規定套件，主要用於專案合作中為避免低級的Bug、產出風格統一且高品質的代碼，會預先制定編碼規範。ESLint幫助我們檢查寫Javascript時的語法錯誤。我個人是滿需要的，因為常常會忘記加上()或變數寫錯之類的…，不過在開始前要先安裝Javascript ES6的環境。</p>
+<p>如果要使用Javascript ES6的話，就必須先安裝<a href="http://babeljs.io/" target="_blank" rel="noopener">babel</a>。而這套件竟然還有歌曲(? 太神了吧，我使用的方式是直接安裝在project內部(但全局我也有裝)，而我使用的Node.js版本是7.7.3所以可以直接安裝<a href="https://www.npmjs.com/package/babel-preset-es6-node6" target="_blank" rel="noopener">babel-preset-es6-node6</a>而不是<a href="https://www.npmjs.com/package/babel-preset-es2015" target="_blank" rel="noopener">babel-preset-es2015</a>(es2015表示ES6轉換器，stage-3表示ES7轉換器)。 </p>
+<h3 id="安裝Babel"><a href="#安裝Babel" class="headerlink" title="安裝Babel"></a>安裝Babel</h3><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g --save-dev babel-cli babel-preset-env babel-polyfill babel-preset-es6-node6 babel-preset-stage-3
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安裝完後的<em>package.json</em> 檔案<br><img src="https://i.loli.net/2018/01/11/5a57802f887e0.png" alt="Alt text" title="package.json"><br>在專案中新建 <em>.babelrc檔案</em>，並輸入下面那段語法，如果你是安裝babel-preset-es2015，請自己把es6-node6換成es2015。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">touch</span> .babelrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>.babelrc檔案</p>
+</blockquote>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    presets<span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"es6-node6"</span><span class="token punctuation">,</span> <span class="token string">"stage-3"</span> <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>接下來只要直接執行 <em>babel-node your-file.js</em> 就可以成功執行了。但我的主要目的還沒達到，接著繼續安裝<a href="https://eslint.org/" target="_blank" rel="noopener">ESLint</a> &amp; <a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base" target="_blank" rel="noopener">airbnb-javascript-rules</a>!</p>
+<hr>
+<h3 id="安裝-ESLint-和-airbnb-javascript-rules"><a href="#安裝-ESLint-和-airbnb-javascript-rules" class="headerlink" title="安裝 ESLint 和 airbnb-javascript-rules"></a>安裝 ESLint 和 airbnb-javascript-rules</h3><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> eslint babel-eslint -g --save-dev
+$ <span class="token function">npm</span> <span class="token function">install</span> eslint-config-airbnb-base eslint-plugin-import -g --save-dev
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2018/01/11/5a5781b3693ec.png" alt="Alt text" title="package.json"><br>在專案中新建 <em>.eslintrc檔案</em> 設定檔，並輸入下面那段語法。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">touch</span> .eslintrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>.eslintrc檔案</p>
+</blockquote>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"parser"</span><span class="token operator">:</span> <span class="token string">"babel-eslint"</span><span class="token punctuation">,</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"airbnb-base"</span><span class="token punctuation">,</span>
+  <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"semi"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"never"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"arrow-body-style"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token string">"always"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"no-console"</span><span class="token operator">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"browser"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"node"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"plugins"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"import"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>這邊就是重點了，因為是初學所以就先看看別人的設定，然後慢慢修改，大概解說一下：</p>
+<ul>
+<li>parser: 指的是解析器，如果有安裝babel編譯器，就是設定<em>babel-eslint</em>。</li>
+<li>extends: 設定規則設定檔，這裡使用<em>airbnb-base</em>。</li>
+<li>rules: 額外的規則，像是語句結尾不用分號</li>
+<li>env: 環境設定在browser或node上使用。</li>
+<li>plugins: 設定插件，這裡使用<em>eslint-plugin-import</em>。</li>
+</ul>
+<p>接著就可以運行ESLint了!會看到非常多錯誤QAQ，但是在後面加上個<em>–fix</em> 會自動幫你解決一些排版小問題。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ eslint yourfile.js --fix
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>想要更了解的ESLint的可以看看參考資料，裡面都寫得很詳細，這篇文只是簡單實作後的紀錄。</p>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料:"></a>參考資料:</h3><ul>
+<li><a href="https://ithelp.ithome.com.tw/articles/10184924" target="_blank" rel="noopener">Day 03: ESLint - Lint工具的後起之秀</a></li>
+<li><a href="http://seans.tw/2016/use-es6-es7-on-nodejs/" target="_blank" rel="noopener">使用ES6與ES7在nodejs上執行程式</a></li>
+<li><a href="http://seans.tw/2016/eslint-with-airbnb/" target="_blank" rel="noopener">用eslint X Airbnb js-rules改善程式碼品質</a></li>
+<li><a href="https://www.jianshu.com/p/f2f06a0e154b" target="_blank" rel="noopener">EsLint入门学习整理</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 技術 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ESLint </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[gulp學習]]></title>
       <url>/2018/01/08/gulp%E5%AD%B8%E7%BF%92/</url>
       <content type="html"><![CDATA[<p>最近看了一些Gulp的學習文章，想說當完兵後，頭腦也空空的就來學吧。<a href="https://gulpjs.com/" target="_blank" rel="noopener">Gulp</a>使用Node.js的streams串流，而我想要學習Gulp的原因很簡單，就是我想要修改程式後不按F5啦(流程自動化)!但是他的優點好像不只這樣，像是監聽檔案、壓縮圖片等等，但是優點太多人說過了我就不說了，直接開幹吧!<br>這次主要學習的文章是<a href="https://markgoodyear.com/2014/01/getting-started-with-gulp/" target="_blank" rel="noopener">Getting started with gulp</a>這篇，但在開始之前還是要先裝個環境。來看看官方的指南!</p>
@@ -32,7 +114,7 @@ $ gulp -v
 </li>
 </ol>
 <h2 id="目錄結構"><a href="#目錄結構" class="headerlink" title="目錄結構"></a>目錄結構</h2><p>基本設置已經完成，在這邊先停一下，我發現要使用Gulp時，目錄結構非常重要，不然找不到檔案，所以建議檔案結構可以參考下面這個簡易的目錄。<br>可參考比較完整的<a href="https://leohxj.gitbooks.io/a-programmer-prepares/programmer-basic/directory.html" target="_blank" rel="noopener">目錄建構</a></p>
-<p>├── [Project Name]<br>├──── [src]<br>├─────── [scripts]<br>├─────── [styles]<br>├─────── [images]<br>├─────── index.html<br>├──── [dist]<br>├─────── [assets]<br>├────────── [js]<br>├────────── [css]<br>├────────── [img]<br>├─────── index.html<br>├──── gulpfile.js</p>
+<p>├── [Project Name]<br>├──── [src]<br>├─────── [scripts]<br>├─────── [styles]<br>├─────── [images]<br>├─────── index.html<br>├──── [dist]<br>├─────── [js]<br>├─────── [css]<br>├─────── [img]<br>├─────── index.html<br>├──── gulpfile.js</p>
 <p>接下來就來看看官方的API文件(gulp API docs)，非常多的API，但我這次練習不用到這麼多，主要用到<br>gulp.src(globs[, options])</p>
 <blockquote>
 <p>指定檔案來源</p>
@@ -49,14 +131,15 @@ $ gulp -v
 <blockquote>
 <p>監聽特定檔案是否修改</p>
 </blockquote>
+<p>而Gulp本身的API很簡單，使用 gulp.task 定義一系列的任務，使用 gulp.src 讀取文件，使用 .pipe() 進行一系列的處理，使用 gulp.dest 輸出處理後的文件，並使用 gulp.watch 監聽文件的更改。</p>
 <h2 id="開始寫gulpfile-js"><a href="#開始寫gulpfile-js" class="headerlink" title="開始寫gulpfile.js"></a>開始寫gulpfile.js</h2><p>接下來跟著教學來安裝套件學習吧。<br>安裝一些套件</p>
 <pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> gulp-ruby-sass gulp-autoprefixer gulp-cssnano gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>安裝清單</p>
 <blockquote>
-<p>編譯 Sass（gulp-ruby-sass）<br>Autoprefixer（gulp-autoprefixer）<br>縮小化（minify）CSS（gulp-cssnano）<br>JSHint（gulp-jshint）<br>串接（gulp-concat）<br>醜化（Uglify）（gulp-uglify）<br>壓縮圖檔（gulp-imagemin）<br>即時重整（LiveReload）（gulp-livereload）<br>快取圖片，只有變更的圖檔才會壓縮處理（gulp-cache）<br>通知更動（gulp-notify）<br>清除檔案，有個乾淨的建構環境（del）</p>
+<p>編譯 Sass（gulp-ruby-sass）<br>Autoprefixer（gulp-autoprefixer）<br>縮小化（minify）CSS（gulp-cssnano）<br>JSHint（gulp-jshint）<br>合併檔案（gulp-concat）<br>壓縮混淆 JavaScript 檔案（Uglify）（gulp-uglify）<br>壓縮圖檔（gulp-imagemin）<br>即時重整（LiveReload）（gulp-livereload）<br>快取圖片，只有變更的圖檔才會壓縮處理（gulp-cache）<br>通知更動（gulp-notify）<br>清除檔案，有個乾淨的建構環境（del）</p>
 </blockquote>
-<p>接著完成第一次練習用code，直接看code看到眼睛脫窗….，pipe()是用來串聯外掛檔的，基本上看懂上面的清單就知道任務是怎麼執行的了!</p>
+<p>接著完成第一次練習用code，直接看code看到眼睛脫窗…，基本上看懂上面的清單就知道任務是怎麼執行的了!</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//包含gulp和所有需要的插件</span>
 <span class="token keyword">var</span> gulp <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     sass <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp-ruby-sass'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -145,6 +228,8 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
         
         <tags>
             
+            <tag> javascript </tag>
+            
             <tag> gulp </tag>
             
         </tags>
@@ -156,23 +241,23 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
       <url>/2018/01/07/%E5%9C%A8C9-io%E9%96%8B%E7%99%BCHexo/</url>
       <content type="html"><![CDATA[<p><a href="https://c9.io/" target="_blank" rel="noopener">Cloud 9</a> 是一個開源的網路專案，它採用Node.js作為整個整合開發環境的核心，執行速度、擴充性以及操作使用都與目前眾多的開發環境相似，且啟動速度更快，更為便利。<br>簡單來說就是npm都幫你裝好了，我們先開個一般的html專案就可以了(圖一)<br><img src="https://i.loli.net/2018/01/08/5a525687c3645.png" alt="Alt text" title="圖一"></p>
 <h3 id="安裝Hexo"><a href="#安裝Hexo" class="headerlink" title="安裝Hexo"></a>安裝Hexo</h3><p>接著看到下面的終端機(Terminal)，輸入下面這個指令安裝我們要使用的網誌框架</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="建置部落格"><a href="#建置部落格" class="headerlink" title="建置部落格"></a>建置部落格</h3><p>安裝好後就讓我們建置一個新的專案，blog是你的部落格名稱喔!</p>
-<pre class="line-numbers language-bash"><code class="language-bash">hexo init blog
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo init blog
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="安裝Git"><a href="#安裝Git" class="headerlink" title="安裝Git"></a>安裝Git</h3><p>接著進去專案裡面，安裝Git，好讓你能發布</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> blog
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cd</span> blog
+$ <span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="啟動"><a href="#啟動" class="headerlink" title="啟動"></a>啟動</h3><p>最後就直接啟動吧!</p>
-<pre class="line-numbers language-bash"><code class="language-bash">hexo server -i <span class="token variable">$IP</span> -p <span class="token variable">$PORT</span>
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo server -i <span class="token variable">$IP</span> -p <span class="token variable">$PORT</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="超級懶人包"><a href="#超級懶人包" class="headerlink" title="超級懶人包"></a>超級懶人包</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
-hexo init blog
-<span class="token function">cd</span> blog
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
-hexo server -i <span class="token variable">$IP</span> -p <span class="token variable">$PORT</span>
+<h2 id="超級懶人包"><a href="#超級懶人包" class="headerlink" title="超級懶人包"></a>超級懶人包</h2><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
+$ hexo init blog
+$ <span class="token function">cd</span> blog
+$ <span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
+$ hexo server -i <span class="token variable">$IP</span> -p <span class="token variable">$PORT</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       
@@ -195,35 +280,39 @@ hexo server -i <span class="token variable">$IP</span> -p <span class="token var
         
     </entry>
     
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>/2018/01/05/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 心情 </category>
-            
-        </categories>
-        
-        
-    </entry>
+  
+  
     
-  
-  
+    <entry>
+      <title><![CDATA[關於我]]></title>
+      <url>/about.html</url>
+      <content type="html"><![CDATA[<h2 id="我是誰"><a href="#我是誰" class="headerlink" title="我是誰"></a>我是誰</h2><p>我是Tom Chen，也可以稱呼我YTC。<br>喜歡嘗試新事物，喜歡自由和無拘無束、不喜歡被束縛。</p>
+<p>空閒時會研究認知心理、行為分析，對使用者經驗有些微研究，而本身是個愛旅遊的人，喜歡透過自助旅行來感受當地的文化氣息，去過的地方有日本和香港。</p>
+<blockquote>
+<p>喜歡打保齡球、射飛鏢、游泳、PC game，也是個對桌遊重度著迷的玩家<br>對英美影集、藝術史也有濃厚興趣</p>
+</blockquote>
+<hr>
+<p>I’m Tom Chen, a software engineer and web developer. I first began my journey into code whilst studying Information management at NUTC .<br>During my final year, I juggled assignments with part time work at Exosite where I learn automated tests and develope website,I gained a considerable amount of experience from there.</p>
+<hr>
+<h2 id="Catch-me-if-you-can"><a href="#Catch-me-if-you-can" class="headerlink" title="Catch me if you can"></a>Catch me if you can</h2><ul>
+<li>一些技術相關問題建議發郵件</li>
+<li>無論通過何種方式諮詢，請務必一次性把話說清楚，否則不予理會</li>
+</ul>
+<blockquote>
+<p><a href="http://mis.ndhu.edu.tw/docu/question.htm" target="_blank" rel="noopener">提問的智慧</a> </p>
+</blockquote>
+<ul>
+<li>E-Mail: <a href="mailto:h5648912@gmail.com" target="_blank" rel="noopener"><code>h5648912@gmail.com</code></a></li>
+</ul>
+<blockquote>
+<p>每天都會檢查信箱</p>
+</blockquote>
+<h2 id="版權說明"><a href="#版權說明" class="headerlink" title="版權說明"></a>版權說明</h2><p>除非單獨說明，任何個人或者媒體轉載本博客的原創內容，都請嚴格遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank" rel="noopener">署名-非商業性使用-相同方式共享 4.0 未本地化版本</a> 的知識共享協議。可閱讀 <a href="/creativecommons.html">本博客的知識共享協議說明</a> 瞭解具體授權說明。</p>
+<h2 id="本站存活時間"><a href="#本站存活時間" class="headerlink" title="本站存活時間"></a>本站存活時間</h2><script>function secondToDate(second){if(!second){return 0}var time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600}if(second>=3600){time[2]=parseInt(second/3600);second%=3600}if(second>=60){time[3]=parseInt(second/60);second%=60}if(second>0){time[4]=second}return time};function setTime(){var create_time=Math.round(new Date(Date.UTC(2017,10,15,10,23,04)).getTime()/1000);var timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);currentTime=secondToDate((timestamp-create_time));currentTimeHtml=currentTime[0]+'年'+currentTime[1]+'天'+currentTime[2]+'時'+currentTime[3]+'分'+currentTime[4]+'秒';document.getElementById("htmer_time").innerHTML=currentTimeHtml}setInterval(setTime,1000);</script>
+
+<p> <strong><span class="sidebar-badge" id="htmer_time"></span></strong></p>
+]]></content>
+    </entry>
     
     <entry>
       <title><![CDATA[Tom Chen's Blog 知識共享協議說明]]></title>
@@ -281,39 +370,8 @@ hexo server -i <span class="token variable">$IP</span> -p <span class="token var
     </entry>
     
     <entry>
-      <title><![CDATA[關於我]]></title>
-      <url>/about.html</url>
-      <content type="html"><![CDATA[<h2 id="我是誰"><a href="#我是誰" class="headerlink" title="我是誰"></a>我是誰</h2><p>我是Tom Chen，也可以稱呼我YTC。<br>喜歡嘗試新事物，喜歡自由和無拘無束、不喜歡被束縛。</p>
-<p>空閒時會研究認知心理、行為分析，對使用者經驗有些微研究，而本身是個愛旅遊的人，喜歡透過自助旅行來感受當地的文化氣息，去過的地方有日本和香港。</p>
-<blockquote>
-<p>喜歡打保齡球、射飛鏢、游泳、PC game，也是個對桌遊重度著迷的玩家<br>對英美影集、藝術史也有濃厚興趣</p>
-</blockquote>
-<hr>
-<p>I’m Tom Chen, a software engineer and web developer. I first began my journey into code whilst studying Information management at NUTC .<br>During my final year, I juggled assignments with part time work at Exosite where I learn automated tests and develope website,I gained a considerable amount of experience from there.</p>
-<hr>
-<h2 id="Catch-me-if-you-can"><a href="#Catch-me-if-you-can" class="headerlink" title="Catch me if you can"></a>Catch me if you can</h2><ul>
-<li>一些技術相關問題建議發郵件</li>
-<li>無論通過何種方式諮詢，請務必一次性把話說清楚，否則不予理會</li>
-</ul>
-<blockquote>
-<p><a href="http://mis.ndhu.edu.tw/docu/question.htm" target="_blank" rel="noopener">提問的智慧</a> </p>
-</blockquote>
-<ul>
-<li>E-Mail: <a href="mailto:h5648912@gmail.com" target="_blank" rel="noopener"><code>h5648912@gmail.com</code></a></li>
-</ul>
-<blockquote>
-<p>每天都會檢查信箱</p>
-</blockquote>
-<h2 id="版權說明"><a href="#版權說明" class="headerlink" title="版權說明"></a>版權說明</h2><p>除非單獨說明，任何個人或者媒體轉載本博客的原創內容，都請嚴格遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank" rel="noopener">署名-非商業性使用-相同方式共享 4.0 未本地化版本</a> 的知識共享協議。可閱讀 <a href="/creativecommons.html">本博客的知識共享協議說明</a> 瞭解具體授權說明。</p>
-<h2 id="本站存活時間"><a href="#本站存活時間" class="headerlink" title="本站存活時間"></a>本站存活時間</h2><script>function secondToDate(second){if(!second){return 0}var time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600}if(second>=3600){time[2]=parseInt(second/3600);second%=3600}if(second>=60){time[3]=parseInt(second/60);second%=60}if(second>0){time[4]=second}return time};function setTime(){var create_time=Math.round(new Date(Date.UTC(2017,10,15,10,23,04)).getTime()/1000);var timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);currentTime=secondToDate((timestamp-create_time));currentTimeHtml=currentTime[0]+'年'+currentTime[1]+'天'+currentTime[2]+'時'+currentTime[3]+'分'+currentTime[4]+'秒';document.getElementById("htmer_time").innerHTML=currentTimeHtml}setInterval(setTime,1000);</script>
-
-<p> <strong><span class="sidebar-badge" id="htmer_time"></span></strong></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[「時間軸」]]></title>
-      <url>/timeline.html</url>
+      <title><![CDATA[圖庫]]></title>
+      <url>//gallery.html</url>
       <content type="html"></content>
     </entry>
     
@@ -324,8 +382,8 @@ hexo server -i <span class="token variable">$IP</span> -p <span class="token var
     </entry>
     
     <entry>
-      <title><![CDATA[圖庫]]></title>
-      <url>//gallery.html</url>
+      <title><![CDATA[「時間軸」]]></title>
+      <url>/timeline.html</url>
       <content type="html"></content>
     </entry>
     
