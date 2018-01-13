@@ -86,7 +86,7 @@ $ <span class="token function">npm</span> <span class="token function">install</
     
     <entry>
       <title><![CDATA[gulp學習]]></title>
-      <url>/2018/01/08/gulp%E5%AD%B8%E7%BF%92/</url>
+      <url>/2018/01/08/Gulp/</url>
       <content type="html"><![CDATA[<p>最近看了一些Gulp的學習文章，想說當完兵後，頭腦也空空的就來學吧。<a href="https://gulpjs.com/" target="_blank" rel="noopener">Gulp</a>使用Node.js的streams串流，而我想要學習Gulp的原因很簡單，就是我想要修改程式後不按F5啦(流程自動化)!但是他的優點好像不只這樣，像是監聽檔案、壓縮圖片等等，但是優點太多人說過了我就不說了，直接開幹吧!<br>這次主要學習的文章是<a href="https://markgoodyear.com/2014/01/getting-started-with-gulp/" target="_blank" rel="noopener">Getting started with gulp</a>這篇，但在開始之前還是要先裝個環境。來看看官方的指南!</p>
 <h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><ol>
 <li>全局安裝 CLI version：<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --global gulp
@@ -238,7 +238,7 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
     
     <entry>
       <title><![CDATA[在Cloud9 (C9.io) 開發Hexo]]></title>
-      <url>/2018/01/07/%E5%9C%A8C9-io%E9%96%8B%E7%99%BCHexo/</url>
+      <url>/2018/01/07/Hexo/</url>
       <content type="html"><![CDATA[<p><a href="https://c9.io/" target="_blank" rel="noopener">Cloud 9</a> 是一個開源的網路專案，它採用Node.js作為整個整合開發環境的核心，執行速度、擴充性以及操作使用都與目前眾多的開發環境相似，且啟動速度更快，更為便利。<br>簡單來說就是npm都幫你裝好了，我們先開個一般的html專案就可以了(圖一)<br><img src="https://i.loli.net/2018/01/08/5a525687c3645.png" alt="Alt text" title="圖一"></p>
 <h3 id="安裝Hexo"><a href="#安裝Hexo" class="headerlink" title="安裝Hexo"></a>安裝Hexo</h3><p>接著看到下面的終端機(Terminal)，輸入下面這個指令安裝我們要使用的網誌框架</p>
 <pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g
@@ -287,8 +287,7 @@ $ hexo server -i <span class="token variable">$IP</span> -p <span class="token v
       <title><![CDATA[關於我]]></title>
       <url>/about.html</url>
       <content type="html"><![CDATA[<p><img src="https://i.loli.net/2018/01/11/5a578944cbc1b.jpg" alt="Alt text" title="Tom Chen"></p>
-<h2 id="我是誰"><a href="#我是誰" class="headerlink" title="我是誰"></a>我是誰</h2><p>我是Tom Chen，也可以稱呼我YTC。<br>喜歡嘗試新事物，喜歡自由和無拘無束、不喜歡被束縛。</p>
-<p>空閒時會研究認知心理、行為分析，對使用者經驗有些微研究，而本身是個愛旅遊的人，喜歡透過自助旅行來感受當地的文化氣息，去過的地方有日本和香港。</p>
+<h2 id="我是誰"><a href="#我是誰" class="headerlink" title="我是誰"></a>我是誰</h2><p>我是Tom Chen，也可以稱呼我YTC。喜歡嘗試新事物，喜歡自由和無拘無束、不喜歡被束縛。<br>空閒時會研究認知心理、行為分析，對使用者經驗有些微研究，而本身是個愛旅遊的人，喜歡透過自助旅行來感受當地的文化氣息，去過的地方有日本和香港。</p>
 <blockquote>
 <p>喜歡打保齡球、射飛鏢、游泳、PC game，也是個對桌遊重度著迷的玩家<br>對英美影集、藝術史也有濃厚興趣</p>
 </blockquote>

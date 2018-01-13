@@ -227,6 +227,7 @@ p {
 }
 
 a {
+  text-decoration:none !important;
   color: #ff4081;
   font-weight: 500
 }
